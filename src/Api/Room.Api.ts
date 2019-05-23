@@ -179,7 +179,7 @@ export default class RoomApi {
         }
 
         // level 2 -- 50 - 150 body parts
-        if (hostileBodyParts < 150 && hostileBodyParts >= 50) {
+        if (hostileBodyParts < 150 && hostileBodyParts > 50) {
             room.memory.defcon = 2;
             return;
         }
