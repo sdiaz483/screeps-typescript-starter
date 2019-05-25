@@ -1016,6 +1016,10 @@ interface AttackFlagMemory extends ParentFlagMemory {
      * the location creeps are going to meet
      */
     rallyLocation: RoomPosition | null;
+    /**
+     * the number of creeps this flag has successfully spawned
+     */
+    currentSpawnCount: number;
 }
 
 /**
