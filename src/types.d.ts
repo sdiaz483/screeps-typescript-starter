@@ -570,6 +570,33 @@ interface CarryPartJobListing {
     storeJobs?: Cache;
 }
 
+/**
+ * types of custom events
+ */
+type C_EVENT_BUILD_COMPLETE = 1;
+type C_EVENT_CREEP_SPAWNED = 2;
+type CustomEventConstant =
+    C_EVENT_BUILD_COMPLETE |
+    C_EVENT_CREEP_SPAWNED;
+
+/**
+ * a custom event that signals something notable that occured in a room
+ */
+interface CustomEvent {
+    /**
+     * the constant of the type of event that occured
+     */
+    type: CustomEventConstant;
+    /**
+     * the target id that the event occured on
+     */
+    targetId: string;
+    /**
+     * the room name the event occured in
+     */
+    roomName: string;
+}
+
 interface RoomMemory {
     roomState?: RoomStateConstant;
     /**
@@ -637,6 +664,10 @@ interface RoomMemory {
      * extra memory for visual function
      */
     visual?: VisualMemory;
+    /**
+     * memory for the custom in room events
+     */
+    events: CustomEvent[];
 }
 
 interface Memory {

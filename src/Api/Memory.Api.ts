@@ -189,7 +189,8 @@ export default class MemoryApi {
                 droppedResources: { data: null, cache: null },
                 jobs: {},
                 structures: { data: null, cache: null },
-                upgradeLink: ""
+                upgradeLink: "",
+                events: [],
             };
         } else {
             Memory.rooms[roomName] = {
@@ -200,7 +201,8 @@ export default class MemoryApi {
                 droppedResources: { data: null, cache: null },
                 constructionSites: { data: null, cache: null },
                 defcon: -1,
-                hostiles: { data: null, cache: null }
+                hostiles: { data: null, cache: null },
+                events: [],
             };
         }
 

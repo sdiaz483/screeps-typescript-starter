@@ -453,4 +453,20 @@ export default class RoomHelper {
         }
         return 0;
     }
+
+
+    /**
+     * convert a room object to a room position object
+     * @param roomObj the room object we are converting
+     */
+    public static convertRoomObjToRoomPosition(roomObj: RoomObject): RoomPosition | null {
+
+        if (roomObj.room === undefined) {
+            return null;
+        }
+        const x: number = roomObj.pos.x;
+        const y: number = roomObj.pos.y;
+        const roomName: string = roomObj.room!.name;
+        return new RoomPosition(x, y, roomName);
+    }
 }

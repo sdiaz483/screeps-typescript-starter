@@ -105,6 +105,8 @@ export const SPAWN_MANAGER_BUCKET_LIMIT = 50;
 export const EMPIRE_MANAGER_BUCKET_LIMIT = 5000;
 export const ROOM_MANAGER_BUCKET_LIMIT = 500;
 export const MEMORY_MANAGER_BUCKET_LIMIT = 1;
+export const EVENT_MANAGER_BUCKET_LIMIT = 5000;
+export const ROOM_OVERLAY_BUCKET_LIMIT = 7000;
 
 /**
  * List of allies

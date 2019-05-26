@@ -154,3 +154,7 @@ export const DEFAULT_MOVE_OPTS: MoveToOpts = {
     // swampCost: 5, // Putting this here as a reminder that we can make bigger creeps that can move on swamps
     visualizePathStyle: {} // Empty object for now, just uses default visualization
 };
+
+// Custom Event Type Constants
+export const C_EVENT_BUILD_COMPLETE = 1;
+export const C_EVENT_CREEP_SPAWNED = 2;
