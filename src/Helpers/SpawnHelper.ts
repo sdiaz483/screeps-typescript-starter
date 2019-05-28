@@ -1332,7 +1332,7 @@ export class SpawnHelper {
             allRemoteRooms,
             remoteRoom =>
                 this.getNumCreepAssignedAsTargetRoom(room, roleConst, remoteRoom, tickLimit) <
-                this.getLimitPerRemoteRoomForRolePerSource(roleConst, remoteRoom!.sources.data)
+                this.getLimitPerRemoteRoomForRolePerSource(roleConst, remoteRoom!.sources.data.length)
         );
 
         let nextRemoteRoom: RemoteRoomMemory | undefined;

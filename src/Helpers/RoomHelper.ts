@@ -469,4 +469,35 @@ export default class RoomHelper {
         const roomName: string = roomObj.room!.name;
         return new RoomPosition(x, y, roomName);
     }
+
+
+    /**
+     * check if the first room is a remote room of the second
+     */
+    public static isRemoteRoomOf(dependentRoomName: string, hostRoomName?: string): boolean {
+
+        // early returns
+        if (!hostRoomName) {
+            const ownedRooms: Room[] = MemoryApi.getOwnedRooms();
+            for (const room of ownedRooms) {
+                const remoteRooms: RemoteRoomMemory[] = MemoryApi.getRemoteRooms(room);
+                if (_.some(remoteRooms, (rr: RemoteRoomMemory) =>
+                    rr.roomName === dependentRoomName)) {
+
+                    return true;
+                }
+            }
+            return false;
+        }
+        if (!Memory.rooms[hostRoomName]) {
+            return false;
+        }
+        if (!Game.rooms[hostRoomName]) {
+            return false;
+        }
+
+        const remoteRooms: RemoteRoomMemory[] = MemoryApi.getRemoteRooms(Game.rooms[hostRoomName]);
+        return _.some(remoteRooms, (rr: RemoteRoomMemory) =>
+            rr.roomName === dependentRoomName);
+    }
 }

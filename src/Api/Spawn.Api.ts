@@ -350,7 +350,7 @@ export default class SpawnApi {
         spawn: StructureSpawn,
         homeRoom: string,
         targetRoom: string
-    ): void {
+    ): number {
         // Throw error if we don't have enough energy to spawn this creep
         if (this.getEnergyCostOfBody(body) > room.energyAvailable) {
             throw new UserException(
@@ -363,7 +363,7 @@ export default class SpawnApi {
         const name: string = SpawnHelper.generateCreepName(role, this.getTier(room, role), room);
         const creepMemory = SpawnHelper.generateDefaultCreepMemory(role, homeRoom, targetRoom, creepOptions);
 
-        spawn.spawnCreep(body, name, { memory: creepMemory });
+        return spawn.spawnCreep(body, name, { memory: creepMemory });
     }
 
     /**
