@@ -20,4 +20,20 @@ export default class EventHelper {
     public static miltaryCreepSpawnTrigger(room: Room, event: CustomEvent, creep: Creep): void {
 
     }
+
+    /**
+     * scan for structure built events
+     * @param room the room we are scanning
+     */
+    public static scanForStructureBuiltEvents(room: Room): void {
+
+    }
+
+    /**
+     * scan for creep spawned events
+     * @param room the room we are scanning
+     */
+    public static scanForCreepSpawnedEvents(room: Room): void {
+
+    }
 }

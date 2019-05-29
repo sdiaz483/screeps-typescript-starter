@@ -13,11 +13,13 @@ export default class EventManager {
 
         // Process Events for all owned rooms
         _.forEach(ownedRooms, (room: Room) => {
+            EventApi.scanForNewEvents(room);
             EventApi.processRoomEvents(room);
         });
 
         // Init memory for all visible dependent rooms
         _.forEach(dependentRooms, (room: Room) => {
+            EventApi.scanForNewEvents(room);
             EventApi.processRoomEvents(room);
         });
     }

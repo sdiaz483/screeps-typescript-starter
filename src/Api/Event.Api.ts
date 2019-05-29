@@ -30,6 +30,18 @@ export default class EventApi {
 
 
     /**
+     * check for events occuring in a room
+     * @param room the room we are checking events for
+     */
+    public static scanForNewEvents(room: Room): void {
+
+        // Call the helper functions to scan for and create new events for the room
+        EventHelper.scanForStructureBuiltEvents(room);
+        EventHelper.scanForCreepSpawnedEvents(room);
+    }
+
+
+    /**
      *
      * @param room
      */
