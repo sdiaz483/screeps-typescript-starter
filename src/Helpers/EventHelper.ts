@@ -19,6 +19,7 @@ export default class EventHelper {
      */
     public static miltaryCreepSpawnTrigger(room: Room, event: CustomEvent, creep: Creep): void {
 
+        // handle creep spawned trigger event here
     }
 
     /**
@@ -26,7 +27,7 @@ export default class EventHelper {
      * @param room the room we are scanning
      */
     public static scanForStructureBuiltEvents(room: Room): void {
-
+        // scan for a structure somehow that was completed this turn
     }
 
     /**
@@ -34,6 +35,6 @@ export default class EventHelper {
      * @param room the room we are scanning
      */
     public static scanForCreepSpawnedEvents(room: Room): void {
-
+        // scan for creeps with a ttl of 1500 or 1499 this turn
     }
 }
